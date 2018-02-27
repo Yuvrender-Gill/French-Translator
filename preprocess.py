@@ -11,8 +11,8 @@ abbrivaition_file2 = open(abbrivaition_file_path2, 'r')
 abbrivaition_file3 = open(abbrivaition_file_path3, 'r')
 abbrivaition_file4 = open(abbrivaition_file_path4, 'r')
 abbrivaition_list = set(abbrivaition_file1.readlines()).union(
-    abbrivaition_file2.readlines().union(abbrivaition_file3.readlines().union(
-abbrivaition_file4.readlines()
+    set(abbrivaition_file2.readlines()).union(set(abbrivaition_file3.readlines()).union(
+set(abbrivaition_file4.readlines())
     )))
 abbrivaition_file1.close()
 abbrivaition_file2.close()
