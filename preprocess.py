@@ -22,6 +22,7 @@ def preprocess(in_sentence, language):
     # Remove the newline character if present in the in sentence
 
     out_sentence = punctuation_processor(in_sentence).replace("\n", "")
+    out_sentence = split_clitics(out_sentence)
     if language == 'e' or language == 'f':
         if language == 'e':
             return out_sentence
@@ -52,6 +53,17 @@ def punctuation_processor(in_sentence):
 
     out_sentence = re.sub(r"(') ([A-Za-z] )", r"\1\2", out_sentence).strip()
     return out_sentence
+
+def split_clitics(comment):
+    '''
+    Returns a string with clitics split from the comment.
+    @param String comment: a String to split clitics from
+    @rtype: String
+    '''
+    modified_comment = ' '.join([re.sub(r"((["+ "'" + "]))", r" \1", comment)])
+    modified_comment = ' '.join(modified_comment.split('  '))
+    modified_comment = re.sub(r"(') ([A-Za-z] )", r"\1\2", modified_comment).strip()
+    return modified_comment
 
 
 #=================== Helper Functions =========================
