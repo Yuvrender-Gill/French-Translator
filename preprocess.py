@@ -44,7 +44,7 @@ def punctuation_processor(in_sentence):
     lst_str = in_sentence.split()
     out_sentence = ""
     for item in lst_str:
-        if (not (item in abbr_list)):
+        if (not (item + '\n' in abbr_list)):
             out_sentence += re.sub(r"(([" + '!"#$%&\()*+,-./:;<=>?@[\\]^_`{|}~' + "])\\2*)", r" \1  ", item) + ' '
         else:
             out_sentence += item + ' '
