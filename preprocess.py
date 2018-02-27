@@ -60,7 +60,7 @@ def split_clitics(comment):
     @param String comment: a String to split clitics from
     @rtype: String
     '''
-    modified_comment = ' '.join([re.sub(r"((["+ "'" + "]))", r" \1", comment)])
+    modified_comment = ' '.join([re.sub(r"((["+ "'" + "]))", r"\1 ", comment)])
     modified_comment = ' '.join(modified_comment.split('  '))
     modified_comment = re.sub(r"(') ([A-Za-z] )", r"\1\2", modified_comment).strip()
     return modified_comment
@@ -70,6 +70,9 @@ def split_clitics(comment):
 
 if __name__ == "__main__":
 
-    sentence = "Mr. Speaker, this prime minister seems to be spending 2x much on photo ops, vacations, and personal image than any prime minister ever has.\n"
+    sentence = "Mr. Speaker,\" this prime minister\" seems to be spending 2x much on photo ops, vacations, and personal image than any prime minister ever has.\n"
+    s2 = "we've l'election Mr. Speeaker, fuck (lola-asdfa-):"
+    n2 = preprocess(s2, "e")
+    print(n2)
     new = preprocess(sentence, "e")
     print(new)
