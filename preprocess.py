@@ -2,10 +2,22 @@ import re
 
 
 """ Global Variables """
-abbrivaition_file_path = "/h/u1/cs401/Wordlists/abbrev.english"
-abbrivaition_file = open(abbrivaition_file_path, 'r')
-abbrivaition_list = abbrivaition_file.readlines()
-abbrivaition_file.close()
+abbrivaition_file_path1 = "/h/u1/cs401/Wordlists/abbrev.english"
+abbrivaition_file_path2 = "/h/u1/cs401/Wordlists/abbrev.english~"
+abbrivaition_file_path3 = "/h/u1/cs401/Wordlists/pn_abbrev.english"
+abbrivaition_file_path4 = "/h/u1/cs401/Wordlists/pn_abbrev.english2"
+abbrivaition_file1 = open(abbrivaition_file_path1, 'r')
+abbrivaition_file2 = open(abbrivaition_file_path2, 'r')
+abbrivaition_file3 = open(abbrivaition_file_path3, 'r')
+abbrivaition_file4 = open(abbrivaition_file_path4, 'r')
+abbrivaition_list = set(abbrivaition_file1.readlines()).union(
+    abbrivaition_file2.readlines().union(abbrivaition_file3.readlines().union(
+abbrivaition_file4.readlines()
+    )))
+abbrivaition_file1.close()
+abbrivaition_file2.close()
+abbrivaition_file3.close()
+abbrivaition_file4.close()
 
 
 def preprocess(in_sentence, language):
@@ -49,7 +61,7 @@ def punctuation_processor(in_sentence):
     lst_str = in_sentence.split()
     out_sentence = ""
     for item in lst_str:
-        if (not (item + '\n' in abbr_list)):
+        if not ((item + '\n' in abbr_list) or (item in abbr_list)):
             out_sentence += ' '.join(
                 [re.sub(r"(([" + '!"#$%&\()*+,-./:;<=>?@[\\]^_`{|}~' + "])\\2*)", r" \1 ", item)]) + ' '
         else:
