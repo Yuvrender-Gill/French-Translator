@@ -2,10 +2,10 @@ import re
 
 
 """ Global Variables """
-# abbrivaition_file_path = "/h/u1/cs401/Wordlists/abbrev.english"
-# abbrivaition_file = open(abbrivaition_file_path, 'r')
-# abber_list = abbrivaition_file.readlines()
-# abbrivaition_file.close()
+abbrivaition_file_path = "/h/u1/cs401/Wordlists/abbrev.english"
+abbrivaition_file = open(abbrivaition_file_path, 'r')
+abber_list = abbrivaition_file.readlines()
+abbrivaition_file.close()
 def preprocess(in_sentence, language):
     """ 
     This function preprocesses the input text according to language-specific rules.
@@ -36,9 +36,10 @@ def punctuation_processor(in_sentence):
     @param String comment: a String to tokenize punctuation from
     @rtype: String
     '''
-    abbr_list = ['Capt', 'Col.', 'Dr.', 'Drs.', 'Fig.', 'Figs.', 'Gen.',
-                 'Mr.', 'Mrs.', 'Ref.', 'Rep.', 'Reps.', 'Sen.', 'fig.',
-                 'figs.', 'vs.', 'Lt.', 'e.g.', 'i.e.']
+    abbr_list = abber_list
+        # ['Capt', 'Col.', 'Dr.', 'Drs.', 'Fig.', 'Figs.', 'Gen.',
+        #          'Mr.', 'Mrs.', 'Ref.', 'Rep.', 'Reps.', 'Sen.', 'fig.',
+        #          'figs.', 'vs.', 'Lt.', 'e.g.', 'i.e.']
 
     lst_str = in_sentence.split()
     out_sentence = ""
