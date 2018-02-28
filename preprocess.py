@@ -2,22 +2,22 @@ import re
 
 
 """ Global Variables """
-# abbrivaition_file_path1 = "/h/u1/cs401/Wordlists/abbrev.english"
-# abbrivaition_file_path2 = "/h/u1/cs401/Wordlists/abbrev.english~"
-# abbrivaition_file_path3 = "/h/u1/cs401/Wordlists/pn_abbrev.english"
-# abbrivaition_file_path4 = "/h/u1/cs401/Wordlists/pn_abbrev.english2"
-# abbrivaition_file1 = open(abbrivaition_file_path1, 'r')
-# abbrivaition_file2 = open(abbrivaition_file_path2, 'r')
-# abbrivaition_file3 = open(abbrivaition_file_path3, 'r')
-# abbrivaition_file4 = open(abbrivaition_file_path4, 'r')
-# abbrivaition_list = set(abbrivaition_file1.readlines()).union(
-#     set(abbrivaition_file2.readlines()).union(set(abbrivaition_file3.readlines()).union(
-# set(abbrivaition_file4.readlines())
-#     )))
-# abbrivaition_file1.close()
-# abbrivaition_file2.close()
-# abbrivaition_file3.close()
-# abbrivaition_file4.close()
+abbrivaition_file_path1 = "/h/u1/cs401/Wordlists/abbrev.english"
+abbrivaition_file_path2 = "/h/u1/cs401/Wordlists/abbrev.english~"
+abbrivaition_file_path3 = "/h/u1/cs401/Wordlists/pn_abbrev.english"
+abbrivaition_file_path4 = "/h/u1/cs401/Wordlists/pn_abbrev.english2"
+abbrivaition_file1 = open(abbrivaition_file_path1, 'r')
+abbrivaition_file2 = open(abbrivaition_file_path2, 'r')
+abbrivaition_file3 = open(abbrivaition_file_path3, 'r')
+abbrivaition_file4 = open(abbrivaition_file_path4, 'r')
+abbrivaition_list = set(abbrivaition_file1.readlines()).union(
+    set(abbrivaition_file2.readlines()).union(set(abbrivaition_file3.readlines()).union(
+set(abbrivaition_file4.readlines())
+    )))
+abbrivaition_file1.close()
+abbrivaition_file2.close()
+abbrivaition_file3.close()
+abbrivaition_file4.close()
 
 
 def preprocess(in_sentence, language):
@@ -40,11 +40,11 @@ def preprocess(in_sentence, language):
     if language == 'e' or language == 'f':
         if language == 'e':
             out_sentence = english_clitics(out_sentence)
-            return out_sentence
+
         else:
             out_sentence = french_clitics(out_sentence)
-            return out_sentence
-    return out_sentence
+
+    return 'STARTSENT ' + out_sentence.strip() + ' ENDSENT'
 
 
 def punctuation_processor(in_sentence):
@@ -53,10 +53,10 @@ def punctuation_processor(in_sentence):
     @param String comment: a String to tokenize punctuation from
     @rtype: String
     '''
-    abbr_list = \
-        ['Capt', 'Col.', 'Dr.', 'Drs.', 'Fig.', 'Figs.', 'Gen.',
-                 'Mr.', 'Mrs.', 'Ref.', 'Rep.', 'Reps.', 'Sen.', 'fig.',
-                 'figs.', 'vs.', 'Lt.', 'e.g.', 'i.e.']
+    abbr_list = abbrivaition_list
+        # ['Capt', 'Col.', 'Dr.', 'Drs.', 'Fig.', 'Figs.', 'Gen.',
+        #          'Mr.', 'Mrs.', 'Ref.', 'Rep.', 'Reps.', 'Sen.', 'fig.',
+        #          'figs.', 'vs.', 'Lt.', 'e.g.', 'i.e.']
 
     lst_str = in_sentence.split()
     out_sentence = ""

@@ -27,66 +27,54 @@ def lm_train(data_dir, language, fn_LM):
 		  LM['bi']['word']['bird'] = 2 	# The bigram 'word bird' appears 2 times.
     """
 
+    uni_dict = {}
+    bi_dict = {}
+    for subdir, dirs, files in os.walk(data_dir):
+        for file in files:
+            fullFile = os.path.join(subdir, file)
+            unigram_dict(uni_dict, fullFile, language)
+            bigram_dict(bi_dict, fullFile, language)
 
-
-    unigram_dict = {}
-    bigram_dict = {}
-
-    language_model = {"uni": unigram_dict, "bi": bigram_dict}
-
-#Save Model
+    language_model = {"uni": uni_dict, "bi": bi_dict}
     with open(fn_LM+'.pickle', 'wb') as handle:
         pickle.dump(language_model, handle, protocol=pickle.HIGHEST_PROTOCOL)
     return language_model
 
 
 def unigram_dict(dictionary, fname, language):
-    if (fname[-1] == language):
-        print("Processing " + fname)
-        file = open(fname, "r")
 
+    if fname[-1] == language:
+        file = open(fname, "r")
         for line in file.readlines():
-            for word in preprocess(line, "e").split():
+            for word in preprocess(line, language).split():
                 if (word in dictionary):
                     dictionary[word] += 1
                 else:
                     dictionary[word] = 1
         file.close()
-    return dictionary
 
 
-# def bigram_dict(src_dict, dest_dict, fname, language):
-#     if (fname[-1] == language):
-#         file = open(fname, "r")
-#         for line in file.readlines():
-#             processed_line = preprocess(line, language)
-#             for i in range(len(line.split())):
-#                 new_line =
-#                 if  in src_dict:
-#                     pass
-#                 else:
-#                     src_dict[word] = {}
+def bigram_dict(Bigram, fname, language):
 
-def sub_dictionary(prev_word, present_word, fname):
-    file = open(fname, "r")
-    for line in file.readlines():
-        processed_line = preprocess(line, "e")
+    if fname[-1] == language:
+        file = open(fname)
+        for line in file.readlines():
+            prev_word = "STARTSENT"
+            for word in preprocess(line, language).split():
+                if prev_word in Bigram:
+                    if word in Bigram[prev_word]:
+                        Bigram[prev_word][word] += 1
+                    else:
+                        Bigram[prev_word][word] = 1
+                else:
+                    Bigram[prev_word] = {}
+                    Bigram[prev_word][word] = 1
+                prev_word = word
+        file.close()
+
 
 
 
 if __name__ == "__main__":
     indir = "./data/Hansard/Training"
-    with Manager() as manager:
-        dict = manager.dict()
-        for subdir, dirs, files in os.walk(indir):
-            print(type(files))
-            for file in files:
-
-                fullFile = os.path.join(subdir, file)
-                p = Process(target=unigram_dict, args=(dict, fullFile, "e"))
-            # print(dict)
-            #
-                p.start()
-                p.join()
-
-        print(dict)
+    lm_train(indir, "e", "english")
