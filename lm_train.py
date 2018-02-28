@@ -39,35 +39,54 @@ def lm_train(data_dir, language, fn_LM):
         pickle.dump(language_model, handle, protocol=pickle.HIGHEST_PROTOCOL)
     return language_model
 
-def unigram_dict(dictionary, fname):
-    print("Processing " + fname)
-    file = open(fname, "r")
 
-    for line in file.readlines():
-        for word in preprocess(line, "e").split():
-            if (word in dictionary):
-                dictionary[word] += 1
-            else:
-                dictionary[word] = 1
-    file.close()
+def unigram_dict(dictionary, fname, language):
+    if (fname[-1] == language):
+        print("Processing " + fname)
+        file = open(fname, "r")
+
+        for line in file.readlines():
+            for word in preprocess(line, "e").split():
+                if (word in dictionary):
+                    dictionary[word] += 1
+                else:
+                    dictionary[word] = 1
+        file.close()
     return dictionary
 
+
+# def bigram_dict(src_dict, dest_dict, fname, language):
+#     if (fname[-1] == language):
+#         file = open(fname, "r")
+#         for line in file.readlines():
+#             processed_line = preprocess(line, language)
+#             for i in range(len(line.split())):
+#                 new_line =
+#                 if  in src_dict:
+#                     pass
+#                 else:
+#                     src_dict[word] = {}
+
+def sub_dictionary(prev_word, present_word, fname):
+    file = open(fname, "r")
+    for line in file.readlines():
+        processed_line = preprocess(line, "e")
+
+
+
 if __name__ == "__main__":
-    indir = "./data/"
+    indir = "./data/Hansard/Training"
     with Manager() as manager:
         dict = manager.dict()
-    for subdir, dirs, files in os.walk(indir):
-        for file in files:
+        for subdir, dirs, files in os.walk(indir):
+            print(type(files))
+            for file in files:
 
-            fullFile = os.path.join(subdir, file)
-            p = Process(target=unigram_dict, args=(dict, fullFile))
-            print(dict)
-            p.start()
-            p.join()
+                fullFile = os.path.join(subdir, file)
+                p = Process(target=unigram_dict, args=(dict, fullFile, "e"))
+            # print(dict)
+            #
+                p.start()
+                p.join()
 
-
-
-
-
-
-
+        print(dict)
