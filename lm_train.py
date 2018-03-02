@@ -1,5 +1,4 @@
 from preprocess import *
-from multiprocessing import Pool, Process, Manager
 import pickle
 import os
 
@@ -26,55 +25,58 @@ def lm_train(data_dir, language, fn_LM):
 	e.g., LM['uni']['word'] = 5 		# The word 'word' appears 5 times
 		  LM['bi']['word']['bird'] = 2 	# The bigram 'word bird' appears 2 times.
     """
-
+    # Dictionaries for storing uni-gram and bi-gram language models
     uni_dict = {}
     bi_dict = {}
+
     for subdir, dirs, files in os.walk(data_dir):
         for file in files:
             fullFile = os.path.join(subdir, file)
-            unigram_dict(uni_dict, fullFile, language)
-            bigram_dict(bi_dict, fullFile, language)
+            gram_dict(bi_dict, uni_dict, fullFile, language)
 
+    # Language model dictionary with sub dictionaries
     language_model = {"uni": uni_dict, "bi": bi_dict}
+
+    # Create Pickle File
     with open(fn_LM+'.pickle', 'wb') as handle:
         pickle.dump(language_model, handle, protocol=pickle.HIGHEST_PROTOCOL)
     return language_model
 
 
-def unigram_dict(dictionary, fname, language):
+def gram_dict(bigram, unigram, fname, language):
+    """
+    Returns None. Given a file name fname, it opens the file and pre-processes all the sentences.
+    Then it stores the count of the words in unigram dictionary and stores the bigram counts for
+    pair of words in bigram structured dictionary. The language parameter can be set to 'e' or
+    'f' for english and french language respectively, for the preprocess function.
 
+    :param bigram: (Dict(str : Dict(str: int))) A dictionary with bigram pairs
+    :param unigram: (Dict(str : int)) A dictionary with unigram pairs
+    :param fname: (String) Name of the data file.
+    :param language: (String) String 'e' or 'f' for language to be selected
+    :return: None
+    """
+
+    # Check the file extension for correct language model
     if fname[-1] == language:
-        file = open(fname, "r")
-        for line in file.readlines():
-            for word in preprocess(line, language).split():
-                if (word in dictionary):
-                    dictionary[word] += 1
-                else:
-                    dictionary[word] = 1
-        file.close()
-
-
-def bigram_dict(Bigram, fname, language):
-
-    if fname[-1] == language:
-        file = open(fname)
-        for line in file.readlines():
+        # If correct extension then proceed
+        open_file = open(fname)
+        for line in open_file.readlines():
             prev_word = "STARTSENT"
             for word in preprocess(line, language).split():
-                if prev_word in Bigram:
-                    if word in Bigram[prev_word]:
-                        Bigram[prev_word][word] += 1
-                    else:
-                        Bigram[prev_word][word] = 1
+                # Train uni-gram
+                if word in unigram:
+                    unigram[word] += 1
                 else:
-                    Bigram[prev_word] = {}
-                    Bigram[prev_word][word] = 1
+                    unigram[word] = 1
+                # Train bi-gram
+                if prev_word in bigram:
+                    if word in bigram[prev_word]:
+                        bigram[prev_word][word] += 1
+                    else:
+                        bigram[prev_word][word] = 1
+                else:
+                    bigram[prev_word] = {}
+                    bigram[prev_word][word] = 1
                 prev_word = word
-        file.close()
-
-
-
-
-if __name__ == "__main__":
-    indir = "./data/Hansard/Training"
-    lm_train(indir, "e", "english")
+        open_file.close()

@@ -46,13 +46,14 @@ def preprocess(in_sentence, language):
 
     return 'STARTSENT ' + out_sentence.strip() + ' ENDSENT'
 
+# =================== Helper Functions =========================
 
 def punctuation_processor(in_sentence):
-    '''
+    """
     Returns a string with all its punctuation tokenized.
-    @param String comment: a String to tokenize punctuation from
+    @param String in_sentence: a String to tokenize punctuation from
     @rtype: String
-    '''
+    """ 
     abbr_list = abbrivaition_list
         # ['Capt', 'Col.', 'Dr.', 'Drs.', 'Fig.', 'Figs.', 'Gen.',
         #          'Mr.', 'Mrs.', 'Ref.', 'Rep.', 'Reps.', 'Sen.', 'fig.',
@@ -72,7 +73,7 @@ def punctuation_processor(in_sentence):
 def english_clitics(in_sentence):
     """
     Returns a string with clitics split from the comment.
-    @param String comment: a String to split clitics from
+    @param String in_sentence: a String to split clitics from
     @rtype: String
     """
     out_sentence = ' '.join([re.sub(r"((["+ "'" + "]))", r" \1", in_sentence)])
@@ -84,7 +85,7 @@ def english_clitics(in_sentence):
 def french_clitics(in_sentence):
     """
     Returns a string with clitics split from the comment.
-    @param String comment: a String to split clitics from
+    @param String in_sentence: a String to split clitics from
     @rtype: String
     """
     # 1 Separating singular definite article (le, la) -- separate l' from the words
@@ -105,14 +106,3 @@ def french_clitics(in_sentence):
     out_sentence = re.sub(r"(') ([A-Za-z] )", r"\1\2", out_sentence).strip()
 
     return out_sentence
-
-
-# =================== Helper Functions =========================
-if __name__ == "__main__":
-
-    sentence = "Mr. Speaker,\" this prime minister\" seems to be spending 2x much i.e. on photo ops, vacations, and personal image than any prime minister ever has.\n"
-    s2 = "Ces dernieres annees, la Societe canadienne des postes a fait d'accord profits."
-    n2 = preprocess(s2, "f")
-    print(n2)
-    new = preprocess(sentence, "e")
-    print(new)
