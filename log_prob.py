@@ -28,12 +28,17 @@ def log_prob(sentence, LM, smoothing=False, delta=0, vocabSize=0):
 
         # Implement the sentence probablity
 
+        word_list = sentence.split()
+        print(word_list)
+
+
     return 1
 
 
 if __name__ == "__main__":
-    indir = "./data/Hansard/Training"
+    indir = "./data/Toy"
     dict = lm_train(indir, "f", "french")
-    new = log_prob("hello", d)
+    sentence = "Hello Wordld!"
+    new = log_prob(sentence, d)
 
     print(new)
