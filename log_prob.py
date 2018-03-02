@@ -39,6 +39,6 @@ if __name__ == "__main__":
     indir = "./data/Toy"
     dict = lm_train(indir, "f", "french")
     sentence = "Hello Wordld!"
-    new = log_prob(sentence, d)
+    new = log_prob(sentence, dict)
 
     print(new)
