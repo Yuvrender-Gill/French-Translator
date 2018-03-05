@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dd1a6a5e-4551-4ace-ac98-7c3a6a97366e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/align_ibm1.py" afterPath="$PROJECT_DIR$/align_ibm1.py" />
-      <change beforePath="$PROJECT_DIR$/data/Toy/toy.e" afterPath="$PROJECT_DIR$/data/Toy/toy.e" />
-      <change beforePath="$PROJECT_DIR$/data/Toy/toy.f" afterPath="$PROJECT_DIR$/data/Toy/toy.f" />
-      <change beforePath="$PROJECT_DIR$/decode.py" afterPath="$PROJECT_DIR$/decode.py" />
-      <change beforePath="$PROJECT_DIR$/e_temp.pickle" afterPath="$PROJECT_DIR$/e_temp.pickle" />
-      <change beforePath="$PROJECT_DIR$/english.pickle" afterPath="$PROJECT_DIR$/english.pickle" />
-      <change beforePath="$PROJECT_DIR$/log_prob.py" afterPath="$PROJECT_DIR$/log_prob.py" />
-      <change beforePath="$PROJECT_DIR$/preprocess.py" afterPath="$PROJECT_DIR$/preprocess.py" />
-    </list>
+    <list default="true" id="dd1a6a5e-4551-4ace-ac98-7c3a6a97366e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +39,7 @@
       <file leaf-file-name="align_ibm1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/align_ibm1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
+            <state relative-caret-position="-251">
               <caret line="153" column="16" lean-forward="false" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -672,7 +662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/align_ibm1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="-251">
           <caret line="153" column="16" lean-forward="false" selection-start-line="153" selection-start-column="16" selection-end-line="153" selection-end-column="16" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
