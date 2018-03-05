@@ -4,7 +4,8 @@ from math import log
 from preprocess import *
 from lm_train import *
 from log_prob import *
-from align_ibm1 import * 
+from align_ibm1 import *
+import pickle
 
 def decode(french, LM, AM):
     
@@ -76,3 +77,13 @@ def calc_score(e_sentence, LM):
         else:
             return float("-inf")
     return score
+
+if __name__ == "__main__":
+    indir = "./data/Hansard/Training"
+    french = preprocess("Le ministre des Finances a sabre a tour de bras dans les transferts aux provinces.", "f")
+    with open("english.pickle", "rb") as picklefile:
+        dict = pickle.load(picklefile)
+    with open("temp_AMk.pickle", "rb") as picklefile2:
+        new = pickle.load(picklefile2)
+
+    print(decode(french, dict, new))

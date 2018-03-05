@@ -44,7 +44,7 @@ def preprocess(in_sentence, language):
         else:
             out_sentence = french_clitics(out_sentence)
 
-    return 'STARTSENT ' + out_sentence.strip() + ' ENDSENT'
+    return 'SENTSTART ' + out_sentence.strip() + ' SENTEND'
 
 # =================== Helper Functions =========================
 
