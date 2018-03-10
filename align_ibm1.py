@@ -175,22 +175,3 @@ def em_step(AM, eng, fre):
         for fre_word in tcount_domain[eng_word]:
             AM[eng_word][fre_word] = tcount_domain[eng_word][fre_word]/ float(total_domain[eng_word])
 
-
-if __name__ == "__main__":
-    indir = "./data/Hansard/Training"
-    new = align_ibm1(indir, 1000, 1, "AM1k1")
-    new = align_ibm1(indir, 1000, 2, "AM1k2")
-    new = align_ibm1(indir, 1000, 3, "AM1k3")
-    new = align_ibm1(indir, 10000, 1, "AM10k1")
-    new = align_ibm1(indir, 10000, 2, "AM10k2")
-    new = align_ibm1(indir, 10000, 3, "AM10k3")
-    new = align_ibm1(indir, 15000, 1, "AM15k1")
-    new = align_ibm1(indir, 15000, 2, "AM15k2")
-    new = align_ibm1(indir, 15000, 3, "AM15k3")
-    new = align_ibm1(indir, 30000, 1, "AM30k1")
-    new = align_ibm1(indir, 30000, 2, "AM30k2")
-    new = align_ibm1(indir, 30000, 3, "AM30k3")
-    new = align_ibm1(indir, 100000, 1, "AM100k1")
-    new = align_ibm1(indir, 100000, 2, "AM100k2")
-    new = align_ibm1(indir, 100000, 3, "AM100k3")
-

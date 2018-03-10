@@ -62,7 +62,7 @@ def gram_dict(bigram, unigram, fname, language):
         # If correct extension then proceed
         open_file = open(fname)
         for line in open_file.readlines():
-            prev_word = "START"
+            prev_word = ""
             for word in preprocess(line, language).split():
                 # Train uni-gram
                 if word in unigram:

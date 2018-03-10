@@ -1,0 +1,1019 @@
+
+Interpretation: Clearly there is some error calculating the bleu score for the given test cases.
+
+
+Some common insights for the translator here are that the assumption that IBM-1 algorithm makes about word
+alignments results in alignment of words of French and English which are completely unrelated, secondly, we also
+omit the null word assumption thus the translations produced are not precise.
+
+The produced result might be due to the small number of the provided references, since this directs the model
+to interpret that there is only one correct answer for a given translation. Using fewer references decreases the
+accuracy of the model. Also note that the blue score can be decreased by the using higher n-gram model.
+
+
+Vocab size = 27416
+
+Model with 1000 sentences. 
+The sentence is: Dans le monde reel, il n'y a rien de mal a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Cela vaut pour tous les deputes.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne pense pas que ce soit la notre objectif.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Que tous ceux qui appuient la motion veuillent bien dire oui.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le bonne nouvelle est que Postes Canada est tout ouie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: La question se pose donc, pourquoi?
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Les deputes liberaux sont nombreux a representer des circonscription rurales.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous vivons dans une democratie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le comble du ridicule
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: A mon avis, les non l'emportent
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tous les deputes de tous les partis connaissent bien ces programmes
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous n'avons pas l'intention de mettre fin a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tachons d'honorer nos engagements de Kyoto.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le ministre des Finances a sabre a tour de bras dans les transferts aux provinces.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Mais laissons cela et entrons dans le coeur du debat.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous estimons qu'il est possible de faire mieux.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le plus pur style liberal.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous y revoila, et le premier ministre va determiner qui est le president du conseil.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il est clair que cela constituerait un conflit d'interets.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous nous rejouissons de ces nouvelles perspectives.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je declare la motion rejetee.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Et plus de cinq deputes s'etant leves:
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne crois pas que ce soit la solution du probleme.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je felicite le depute de Winnipeg-Centre d'avoir presente ce projet de loi.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il faut que ca change.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+Model with 10000 sentences. 
+The sentence is: Dans le monde reel, il n'y a rien de mal a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Cela vaut pour tous les deputes.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne pense pas que ce soit la notre objectif.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Que tous ceux qui appuient la motion veuillent bien dire oui.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le bonne nouvelle est que Postes Canada est tout ouie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: La question se pose donc, pourquoi?
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Les deputes liberaux sont nombreux a representer des circonscription rurales.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous vivons dans une democratie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le comble du ridicule
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: A mon avis, les non l'emportent
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tous les deputes de tous les partis connaissent bien ces programmes
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous n'avons pas l'intention de mettre fin a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tachons d'honorer nos engagements de Kyoto.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le ministre des Finances a sabre a tour de bras dans les transferts aux provinces.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Mais laissons cela et entrons dans le coeur du debat.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous estimons qu'il est possible de faire mieux.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le plus pur style liberal.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous y revoila, et le premier ministre va determiner qui est le president du conseil.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il est clair que cela constituerait un conflit d'interets.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous nous rejouissons de ces nouvelles perspectives.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je declare la motion rejetee.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Et plus de cinq deputes s'etant leves:
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne crois pas que ce soit la solution du probleme.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je felicite le depute de Winnipeg-Centre d'avoir presente ce projet de loi.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il faut que ca change.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+Model with 15000 sentences. 
+The sentence is: Dans le monde reel, il n'y a rien de mal a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Cela vaut pour tous les deputes.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne pense pas que ce soit la notre objectif.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Que tous ceux qui appuient la motion veuillent bien dire oui.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le bonne nouvelle est que Postes Canada est tout ouie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: La question se pose donc, pourquoi?
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Les deputes liberaux sont nombreux a representer des circonscription rurales.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous vivons dans une democratie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le comble du ridicule
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: A mon avis, les non l'emportent
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tous les deputes de tous les partis connaissent bien ces programmes
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous n'avons pas l'intention de mettre fin a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tachons d'honorer nos engagements de Kyoto.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le ministre des Finances a sabre a tour de bras dans les transferts aux provinces.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Mais laissons cela et entrons dans le coeur du debat.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous estimons qu'il est possible de faire mieux.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le plus pur style liberal.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous y revoila, et le premier ministre va determiner qui est le president du conseil.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il est clair que cela constituerait un conflit d'interets.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous nous rejouissons de ces nouvelles perspectives.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je declare la motion rejetee.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Et plus de cinq deputes s'etant leves:
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne crois pas que ce soit la solution du probleme.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je felicite le depute de Winnipeg-Centre d'avoir presente ce projet de loi.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il faut que ca change.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+Model with 30000 sentences. 
+The sentence is: Dans le monde reel, il n'y a rien de mal a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Cela vaut pour tous les deputes.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne pense pas que ce soit la notre objectif.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Que tous ceux qui appuient la motion veuillent bien dire oui.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le bonne nouvelle est que Postes Canada est tout ouie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: La question se pose donc, pourquoi?
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Les deputes liberaux sont nombreux a representer des circonscription rurales.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous vivons dans une democratie.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le comble du ridicule
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: A mon avis, les non l'emportent
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tous les deputes de tous les partis connaissent bien ces programmes
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous n'avons pas l'intention de mettre fin a cela.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Tachons d'honorer nos engagements de Kyoto.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Le ministre des Finances a sabre a tour de bras dans les transferts aux provinces.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Mais laissons cela et entrons dans le coeur du debat.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous estimons qu'il est possible de faire mieux.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: C'est le plus pur style liberal.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous y revoila, et le premier ministre va determiner qui est le president du conseil.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il est clair que cela constituerait un conflit d'interets.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Nous nous rejouissons de ces nouvelles perspectives.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je declare la motion rejetee.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Et plus de cinq deputes s'etant leves:
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je ne crois pas que ce soit la solution du probleme.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Je felicite le depute de Winnipeg-Centre d'avoir presente ce projet de loi.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+
+The sentence is: Il faut que ca change.
+
+
+BLEU SCORE: 
+GOOGLE || SELF || i 
+0.0 || 0.0|| 1 
+1.0 || 1.0 || 2 
+1.0 || 1.0 || 3 
+====================================================================================
+

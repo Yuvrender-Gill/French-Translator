@@ -54,7 +54,14 @@ def log_prob(sentence, LM, smoothing=False, delta=0, vocabSize=0):
 
     return log_prob1
 
-
-
-
+if __name__ == "__main__":
+    indir = "./data/Hansard/Training"
+    LM = lm_train(indir, "e", "test")
+    sent = preprocess("WORLD SPRINT SPEED SKATING CHAMPIONSHIPS ", "e")
+    print(log_prob(sent, LM))
+    print(log_prob(sent, LM, True, 0.2, len(LM["uni"])))
+    print(log_prob(sent, LM, True, 0.4, len(LM["uni"])))
+    print(log_prob(sent, LM, True, 0.6, len(LM["uni"])))
+    print(log_prob(sent, LM, True, 0.8, len(LM["uni"])))
+    print(log_prob(sent, LM, True, 1.0, len(LM["uni"])))
 

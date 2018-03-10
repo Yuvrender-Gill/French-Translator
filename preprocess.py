@@ -39,10 +39,10 @@ def preprocess(in_sentence, language):
 
     if language == 'e' or language == 'f':
         if language == 'e':
-            out_sentence = english_clitics(out_sentence)
+            out_sentence = english_clitics(out_sentence.lower())
 
         else:
-            out_sentence = french_clitics(out_sentence)
+            out_sentence = french_clitics(out_sentence.lower())
 
     return 'SENTSTART ' + out_sentence.strip() + ' SENTEND'
 
@@ -97,8 +97,8 @@ def french_clitics(in_sentence):
     # 3 Separate qu'
     out_sentence = ' '.join([re.sub(r"qu'([A-Za-z])", r"qu' \1", out_sentence)])
     # 4 Separate 'on and 'il
-    out_sentence = ' '.join([re.sub(r"([A-Za-z ])qu' on", r"\1qu 'on", out_sentence)])
-    out_sentence = ' '.join([re.sub(r"([A-Za-z ])qu' il", r"\1qu 'il", out_sentence)])
+    out_sentence = ' '.join([re.sub(r"([A-Za-z ])qu' on", r"\1qu' on", out_sentence)])
+    out_sentence = ' '.join([re.sub(r"([A-Za-z ])qu' il", r"\1qu' il", out_sentence)])
     # 5 Concatinate the words d'abord d'accord, d'ailleurs and d'habitude
     out_sentence = ' '.join([re.sub(r"d' (abord|accord|ailleurs|habitude)", r"d'\1", out_sentence)])
 

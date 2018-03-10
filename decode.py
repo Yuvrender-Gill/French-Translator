@@ -83,7 +83,6 @@ if __name__ == "__main__":
     french = preprocess("Le ministre des Finances a sabre a tour de bras dans les transferts aux provinces.", "f")
     with open("english.pickle", "rb") as picklefile:
         dict = pickle.load(picklefile)
-    with open("temp_AMk.pickle", "rb") as picklefile2:
+    with open("AM100k3.pickle", "rb") as picklefile2:
         new = pickle.load(picklefile2)
-
     print(decode(french, dict, new))

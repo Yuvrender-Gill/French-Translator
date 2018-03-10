@@ -1,0 +1,19 @@
+The result clearly indicate that applying the delta smoothing makes the model better
+
+English:
+
+MLE         -inf
+d = 0.2     -79.1719124799
+d = 0.4     -80.8919999448
+d = 0.6    -81.8795723678
+d = 0.8    -82.5581988105
+d = 1.0    -83.0666950397
+
+French:
+
+MLE          -inf
+d = 0.2      -131.037116597
+d = 0.4      -137.616273539
+d = 0.6      -141.935480728
+d = 0.8      -145.215566992
+d = 1.0      -147.882511595
